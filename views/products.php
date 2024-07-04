@@ -2,7 +2,7 @@
 $url = $_SERVER["REQUEST_URI"];
 ?>
 
-<? require "partials/head.php"?>
+<?php require __DIR__ . "/partials/head.php" ?>
 
 <div class="h-200 w-full">
     <div class="wrapper al-center h-200 m-x-40 flex-spacebt-center">
@@ -23,4 +23,4 @@ $url = $_SERVER["REQUEST_URI"];
     </div>
 </div>
 
-<? require "partials/footer.php"?>
+<?php require __DIR__ . "/partials/footer.php"; ?>

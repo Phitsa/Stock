@@ -1,0 +1,16 @@
+{
+    "name": "anthony/projetoestoque",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Phitsa",
+            "email": "145390400+Phitsa@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
