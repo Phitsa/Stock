@@ -2,13 +2,15 @@
 
 use App\Models\Item;
 
-$name = $_POST["itemName"];
-$price = $_POST["itemPrice"];
+$name        = $_POST["itemName"];
+$price       = $_POST["itemPrice"];
 $description = $_POST["itemDescription"];
-$tags = $_POST["itemTags"];
+$tags        = $_POST["itemTags"];
+$quantity    = $_POST["itemQuantity"];
+$input       = 1;
 
-$item = new Item($name,null,$price);
+$item = new Item($name, $price, $description, $tags, $quantity, $input, null);
 $item->store();
 
-header("/products");
-?>
+header("Location: /products");
+
