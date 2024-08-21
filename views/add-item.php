@@ -1,5 +1,9 @@
 <?php
-$url = $_SERVER["REQUEST_URI"];
+use App\Models\Tag;
+
+$getTags = new Tag();
+
+$tags = $getTags->listTags();
 ?>
 
 <?php require "partials/head.php"?>
@@ -11,41 +15,67 @@ $url = $_SERVER["REQUEST_URI"];
     <div class="line m-x-40"></div>
 
     <form action="AddItemController" method="post">
-        <div class="m-40">
-            <div>
-                <label for="itemName" class="inter">Name</label>
-            </div>    
-            <input type="text" name="itemName" class="input-add" required>
-        </div>
-
-        <div class="m-40">
-            <div>
-                <label for="itemPrice" class="inter">Price</label>
+        <div class="wrapper">
+            <div class="m-35">
+                <div>
+                    <label for="itemName" class="inter">Name</label>
+                </div>    
+                <input type="text" name="itemName" class="input-add" required>
             </div>
-            <input type="number" name="itemPrice" class="input-add" required>
-        </div>
 
-        <div class="m-40">
-            <div>
-                <label for="itemDescription" class="inter">Description</label>
-            </div>    
-            <textarea name="itemDescription" class="input-add"></textarea>
+            <div class="m-35">
+                <div>
+                    <label for="itemPrice" class="inter">Price</label>
+                </div>
+                <input type="number" name="itemPrice" class="input-add" required>
+            </div>
         </div>
         
-
-        <div class="m-40">
-            <label for="item-tags" class="inter">Tags</label>
-            <div class="w-300">
-                <select name="item-tags" id="tags" multiple>
-                    <option value="1">Pichau</option>
-                    <option value="2">Tenis</option>
-                </select>
-                <script>
-                new MultiSelectTag('tags')
-                </script>
+        <div class=" wrapper">
+            
+            <div class="m-35">
+                <div>
+                    <label for="itemDescription" class="inter">Description</label>
+                </div>    
+                <textarea name="itemDescription" class="input-add"></textarea>
             </div>
-        </div>
-        <div class="m-40">
+                <div class="m-35">
+                    <div>
+                    <label for="itemQuantity" class="inter">Amount</label>
+                    </div>
+                    <input type="number" name="itemQuantity" class="input-add">
+                </div>
+            </div>
+
+        
+            <div class="m-35">
+                <div>
+                    <label for="itemTags" class="inter">Tags</label>
+                </div>
+                <div class="w-300">
+                    <select name="itemTags[]" id="tags" multiple>
+                        <?php 
+                        
+                        foreach($tags as $tag) {
+                            echo "<option value=".$tag['id'].">".$tag['name']."</option>";
+                        }
+
+                        ?>
+                        <?php 
+                        
+                        foreach($tags as $tag) {
+                            echo "<option value=".$tag['id'].">".$tag['name']."</option>";
+                        }
+
+                        ?>
+                    </select>
+                    <script>
+                    new MultiSelectTag('tags')
+                    </script>
+                </div>
+            </div>
+        
+        <div class="m-35">
             <input type="submit" value="Submit" class="submit">
         </div>
     </form>
