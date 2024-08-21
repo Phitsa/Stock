@@ -12,6 +12,7 @@ $links =
     '/add-tag'    => 'views/add-tag.php',
     '/tag'        => 'views/tag.php',
     '/AddItemController' => 'app/controllers/AddItemController.php',
+    '/AddTagController'  => 'app/controllers/AddTagController.php',
 ];
 
 // lembrar de usar parse_url

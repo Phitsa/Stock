@@ -13,9 +13,8 @@
 <body class="wrapper">
     <div class="sidebar">
         <h1 class="fsize-title inter c-white">Stock</h1>
-        <a href="/"         class="nav-link" <?=$url === "/"         ? 'Style="background-color: #C87AC5"' : null ?> >Home</a>
-        <a href="/products" class="nav-link" <?=$url === "/products" ? 'Style="background-color: #C87AC5"' : null ?> <?=$url === "/add-item"      ? 'Style="background-color: #C87AC5"' : null ?> >Products</a>
-        <a href="/tag"      class="nav-link" <?=$url === "/tag"      ? 'Style="background-color: #C87AC5"' : null ?> <?=$url === "/add-tag"       ? 'Style="background-color: #C87AC5"' : null ?> >Tags</a>
-        <a href="/settings" class="nav-link" <?=$url === "/settings" ? 'Style="background-color: #C87AC5"' : null ?> >Settings</a>
+        <a href="/"         class="nav-link" <?=$url === "/"         ? 'Style="background-color: #c86ac8"' : null ?> >Home</a>
+        <a href="/products" class="nav-link" <?=$url === "/products" ? 'Style="background-color: #c86ac8"' : null ?> <?=$url === "/add-item"      ? 'Style="background-color: #c86ac8"' : null ?> >Products</a>
+        <a href="/tag"      class="nav-link" <?=$url === "/tag"      ? 'Style="background-color: #c86ac8"' : null ?> <?=$url === "/add-tag"       ? 'Style="background-color: #c86ac8"' : null ?> >Tags</a>
     </div>
     

@@ -1,7 +1,3 @@
-<?php
-$url = $_SERVER["REQUEST_URI"];
-?>
-
 <?php require __DIR__ . "/partials/head.php" ?>
 
 <div class="h-200 w-full">
@@ -12,10 +8,6 @@ $url = $_SERVER["REQUEST_URI"];
     </div>
     <div class="line m-x-40"></div>
 
-    <div class="search-container m-40 ">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-bar" placeholder="Search Item">
-    </div>
 </div>
 
 <?php require __DIR__ . "/partials/footer.php"; ?>

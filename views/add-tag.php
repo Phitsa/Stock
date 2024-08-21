@@ -1,24 +1,22 @@
-<?php
-$url = $_SERVER["REQUEST_URI"];
-?>
-
 <?php require "partials/head.php"?>
 <div class="h-full w-full flex-column">
 
     <div class="wrapper al-center m-x-40 flex-spacebt-center">
-        <h1 class="c-5d5d5d inter fsize-title">Add Item</h1>
+        <h1 class="c-5d5d5d inter fsize-title">Add Tag</h1>
     </div>
     <div class="line m-x-40"></div>
 
-    <div class=" w-full flex-c flex-fit flex-row">
-        <form class="m-40 form-template w-400" action="/test" method="post">
-
-            <div class="">
-                <label for="item-name">Name</label><br>
-                <input class="form-input" type="text"   name="item-name"  required>
-            </div>
-            <input type="submit" value="ADD">
-        </form>
-    </div>
+    <form action="AddTagController" method="post">
+        <div class="m-40">
+            <div>
+                <label for="tagName" class="inter">Name</label>
+            </div>    
+            <input type="text" name="tagName" class="input-add" required>
+        </div>
+        <div class="m-40">
+            <input type="submit" value="Submit" class="submit">
+        </div>
+    </form>
+    
 </div>
 <?php require "partials/footer.php"?>
