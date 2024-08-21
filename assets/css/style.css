@@ -1,18 +1,24 @@
 body {
     margin: 0px;
     height: 100vh;
-    background-color: #E5E5E5;
+    background-color: #f6f8f9;
 }
 
 .sidebar {
-    width: 8%;
-    min-width: 8%;
+    max-width: 150px;
+    min-width: 110px;
     min-height: 100%;
-    background-color: #B468B2;
+    background-color: #b34db2;
     padding: 0px 20px 0px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 2000px) {
+    .sidebar {
+        min-width: 150px;
+    }
 }
 
 .nav-link {
@@ -32,7 +38,7 @@ body {
 }
 
 .nav-link:hover {
-    background-color: #C87AC5;
+    background-color: #c86ac8;
     cursor: pointer;
 }
 
@@ -49,11 +55,19 @@ body {
     color: #5d5d5d;
 }
 
+.c-46 {
+    color: #464646;
+}
+
 .inter {
     font-family: "Inter", sans-serif;
     font-weight: 300;
 }
 
+.inter-5 {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
 
 .button {
     width: 120px;
@@ -62,7 +76,7 @@ body {
     color: white;
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    background-color: #EE9DEA;
+    background-color: #b34db2;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -89,6 +103,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.flex-spacebt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.m-t-40 {
+    margin-top: 40px;
 }
 
 .line {
@@ -140,12 +163,36 @@ body {
     margin: 40px;
 }
 
+.m-35 {
+    margin: 35px;
+}
+
 .c-92 {
     color: #929292;
 }
 
+.p-r-30 {
+    padding-right: 30px;
+}
+
+.w-100 {
+    width: 100px;
+}
+
 .w-400 {
     width: 400px;
+}
+
+.w-500 {
+    width: 500px;
+}
+
+.w-700 {
+    width: 700px;
+}
+
+.h-vp {
+    height:100vh;
 }
 
 .c-0 {
@@ -174,9 +221,21 @@ body {
     flex-direction: column;
 }
 
+.flex-just-c {
+    display: flex;
+    justify-content: center;
+}
+
+.m-t-80 {
+    margin-top: 80px;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
 .input-add {
     width: 225.6px;
-    min-width: 225.6px;
     height: 24.4px;
     padding: 5px 0px 5px 5px; 
     border: 2px solid #d9d9d9; 
@@ -185,7 +244,8 @@ body {
     font-size: 16px; 
     font-family: "Inter";
     font-weight: 300;
-    max-width: 292.6px;
+    min-width: 292.6px;
+    max-width: 400px;
     max-height: 130px;
     overflow: auto;
 }
@@ -223,4 +283,23 @@ body {
     transition: 0.2s;
     border: 1px solid white;
     color: white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Desativa a rolagem */
+}
+
+.summary-box {
+    height: 180px;
+    width: 190px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px #e6e6e6;
+}
+
+.f-z-2r {
+    font-size: 2rem;
 }
