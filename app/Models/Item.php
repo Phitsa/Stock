@@ -72,12 +72,18 @@ class Item extends Model
         $sqlcountstock = "SELECT SUM(CASE WHEN input = 1 THEN quantity ELSE -quantity END) AS total_quantity FROM transactions;";
         $result = mysqli_query($this->connection, $sqlcountstock);
 
-        if ($result) {
-            $row = mysqli_fetch_assoc($result);
-            return $row['total_quantity'];
-        } else {
-            return 0; 
-        }   
+        if (!$result) {
+            return 0;
+        }
+
+        $row = mysqli_fetch_assoc($result);
+        $totalquantity = $row['total_quantity'];
+
+        if (!$totalquantity) {
+            return 0;
+        } 
+        
+        return $totalquantity;
     }
 
     public function countTotalValue()
@@ -100,12 +106,19 @@ class Item extends Model
         }
         
         $result = mysqli_query($this->connection,$sqlcounttotalvalue);
+        
+        if (!$result) {
+            return 0;
+        }
 
-        if ($result) {
-            $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
+        $totalvalue = $row['total_amount'];
 
-            $totalvalue = $row['total_amount'];
-            
+        if (!$totalvalue) {
+            return 0;
+        }
+
+        if ($totalvalue) {
             if ($totalvalue >= 1000 && $totalvalue < 1000000) {
                 return round($totalvalue / 1000, 1) . 'k';
             } elseif ($totalvalue >= 1000000 && $totalvalue <1000000000) {
@@ -113,9 +126,6 @@ class Item extends Model
             } else {
                 return $totalvalue;
             }
-        } else {
-            return 0; 
-        }    
+        }
     }
 }
-
