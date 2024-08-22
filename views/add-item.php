@@ -61,13 +61,6 @@ $tags = $getTags->listTags();
                         }
 
                         ?>
-                        <?php 
-                        
-                        foreach($tags as $tag) {
-                            echo "<option value=".$tag['id'].">".$tag['name']."</option>";
-                        }
-
-                        ?>
                     </select>
                     <script>
                     new MultiSelectTag('tags')
