@@ -5,6 +5,7 @@ $item = new Item();
 $uniqueItemsCount   = $item->countItens();
 $totalStockQuantity = $item->countStock();
 $totalValue         = $item->countTotalValue();
+
 ?>
 
 <?php require __DIR__ . "/partials/head.php"; ?>
