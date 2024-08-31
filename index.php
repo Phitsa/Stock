@@ -1,19 +1,15 @@
 <?php
-require "vendor/autoload.php";
 
-$url = $_SERVER["REQUEST_URI"];
-$links = 
-[
-    '/'           => 'views/home.php',
-    '/products'   => 'views/products.php',
-    '/settings'   => 'views/settings.php',
-    '/add-item'   => 'views/add-item.php',
-    '/test'       => 'views/test.php',
-    '/add-tag'    => 'views/add-tag.php',
-    '/tag'        => 'views/tag.php',
-    '/AddItemController' => 'app/controllers/AddItemController.php',
-    '/AddTagController'  => 'app/controllers/AddTagController.php',
-];
+require "vendor/autoload.php";  // Verifique o caminho
 
-// lembrar de usar parse_url
-require $links[$url];
+use App\Models\Router;
+
+$router = new Router();
+
+$routes = require 'views/routes.php';
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+$method = $_POST["_method"] ?? $_SERVER["REQUEST_METHOD"];
+
+require $router->route($uri, $method);

@@ -126,6 +126,6 @@ class Item extends Model
             } else {
                 return $totalvalue;
             }
-        }
+        }  
     }
 }
